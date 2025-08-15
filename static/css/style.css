@@ -1,0 +1,90 @@
+/* 1. Importar la fuente (sin cambios) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* 2. Variables de color con la nueva paleta "Verde Neón" */
+:root {
+    /* ----- NUEVOS COLORES ----- */
+    --primary-color: #39ff14; /* Verde fosforescente */
+    --background-gradient: linear-gradient(to right top, #050505, #0d0d0d, #121212, #181818, #1c1c1c); /* Gradiente casi negro */
+    --glass-background: rgba(15, 15, 15, 0.25); /* Cristal muy oscuro */
+    /* ----- FIN DE NUEVOS COLORES ----- */
+    
+    --glass-border: 1px solid rgba(57, 255, 20, 0.2); /* Borde con un toque de verde */
+    --font-family: 'Poppins', sans-serif;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+}
+
+/* 3. Estilo base con el fondo súper oscuro */
+body {
+    font-family: var(--font-family);
+    background: var(--background-gradient);
+    background-attachment: fixed;
+    color: var(--text-secondary);
+}
+
+/* 4. Efecto de "Cristal Esmerilado" sobre el nuevo fondo */
+.glass-card {
+    background: var(--glass-background);
+    border-radius: 1.5rem;
+    border: var(--glass-border);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* 5. Título principal con brillo verde neón */
+header h1 {
+    color: var(--text-primary);
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.8); /* Sombra de texto verde */
+}
+
+/* 6. Navegación con acentos y estado activo en verde */
+.nav-link {
+    color: var(--text-secondary);
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+.nav-link:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: var(--primary-color);
+    color: #000000; /* Texto negro para máximo contraste sobre el verde */
+    font-weight: 600;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* 7. Tabla con cabecera y borde en verde neón */
+.table {
+    border-color: rgba(57, 255, 20, 0.2);
+}
+.table thead {
+    color: var(--text-primary);
+}
+.table > :not(caption) > * > * {
+    background-color: transparent;
+    border-bottom-width: 1px;
+}
+.table thead th {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* 8. Transiciones de tabla con hover verde */
+.table-hover > tbody > tr {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.table-hover > tbody > tr:hover {
+    background-color: rgba(57, 255, 20, 0.1); /* Hover sutil en verde */
+    transform: translateY(-2px);
+    color: var(--text-primary);
+}
+
+/* Animación HTMX (sin cambios) */
+tr.htmx-settling {
+    opacity: 0;
+}
+tr {
+    transition: all 0.5s ease-out;
+}
