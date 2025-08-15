@@ -1,0 +1,9 @@
+[build]
+builder = "NIXPACKS"
+
+[nix]
+pkgs = [
+    "cairo",
+    "pango",
+    "gdk-pixbuf"
+]
