@@ -3,7 +3,9 @@ builder = "NIXPACKS"
 
 [nix]
 pkgs = [
-    "cairo",
     "pango",
-    "gdk-pixbuf"
+    "cairo",
+    "gdk-pixbuf",
+    "gobject-introspection", # La librería clave que faltaba
+    "fontconfig"             # Importante para que encuentre las fuentes del sistema
 ]
