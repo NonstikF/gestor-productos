@@ -2,10 +2,10 @@
 builder = "NIXPACKS"
 
 [nix]
-pkgs = [
-    "pango",
-    "cairo",
-    "gdk-pixbuf",
-    "gobject-introspection", # La librería clave que faltaba
-    "fontconfig"             # Importante para que encuentre las fuentes del sistema
+# Usaremos aptPkgs en lugar de pkgs. Es un método más directo.
+aptPkgs = [
+    "libpango-1.0-0",
+    "libpangoft2-1.0-0",
+    "libgobject-2.0-0",
+    "libfontconfig1"
 ]
