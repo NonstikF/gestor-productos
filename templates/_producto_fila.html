@@ -1,22 +1,23 @@
 <tr id="producto-{{ producto.id }}">
     <td><strong>{{ producto.nombre }}</strong></td>
     <td>${{ "%.2f"|format(producto.precio) }}</td>
-    
+
     <td class="text-center">{{ producto.cantidad_total }}</td>
-    
+
     <td class="text-center">
         {% if producto.estatus == 'stock' %}
-            <span class="badge text-bg-success">En Stock</span>
+        <span class="badge text-bg-success">En Stock</span>
         {% else %}
-            <span class="badge text-bg-danger">Agotado</span>
+        <span class="badge text-bg-danger">Agotado</span>
         {% endif %}
     </td>
-    
+
     <td class="text-center">
         <div class="d-flex justify-content-center align-items-center gap-2">
             <form hx-post="{{ url_for('modificar_pagado', producto_id=producto.id, accion='decrementar') }}"
-                  hx-target="#producto-{{ producto.id }}" hx-swap="outerHTML">
-                <button type="submit" class="btn btn-outline-danger btn-sm" {% if producto.cantidad_pagada == 0 %}disabled{% endif %}>
+                hx-target="#producto-{{ producto.id }}" hx-swap="outerHTML">
+                <button type="submit" class="btn btn-outline-danger btn-sm" {% if producto.cantidad_pagada==0
+                    %}disabled{% endif %}>
                     <i class="bi bi-dash-lg"></i>
                 </button>
             </form>
@@ -26,8 +27,9 @@
             </span>
 
             <form hx-post="{{ url_for('modificar_pagado', producto_id=producto.id, accion='incrementar') }}"
-                  hx-target="#producto-{{ producto.id }}" hx-swap="outerHTML">
-                <button type="submit" class="btn btn-outline-success btn-sm" {% if producto.cantidad_pagada == producto.cantidad_total %}disabled{% endif %}>
+                hx-target="#producto-{{ producto.id }}" hx-swap="outerHTML">
+                <button type="submit" class="btn btn-outline-success btn-sm" {% if
+                    producto.cantidad_pagada==producto.cantidad_total %}disabled{% endif %}>
                     <i class="bi bi-plus-lg"></i>
                 </button>
             </form>
@@ -35,10 +37,10 @@
     </td>
 
     <td>{{ producto.nota }}</td>
-    
+
     <td class="text-center">
-        <form hx-post="{{ url_for('aumentar_stock', producto_id=producto.id) }}"
-              hx-target="#producto-{{ producto.id }}" hx-swap="outerHTML">
+        <form hx-post="{{ url_for('aumentar_stock', producto_id=producto.id) }}" hx-target="#producto-{{ producto.id }}"
+            hx-swap="outerHTML">
             <button type="submit" class="btn btn-outline-info btn-sm" title="Aumentar stock total">
                 <i class="bi bi-box-arrow-in-up"></i>
             </button>

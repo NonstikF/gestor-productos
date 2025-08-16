@@ -1,51 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2 class="mb-4 text-center">Añadir Nuevo Producto al Inventario</h2>
-    <form method="post" class="row g-3">
-        <div class="col-md-12">
-            <label for="nombre" class="form-label">Nombre del Producto</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej: Paquete de Zapatos" required>
-        </div>
-        
-        <div class="col-md-6">
-            <label for="precio" class="form-label">Precio por Artículo</label>
-            <div class="input-group">
-                <span class="input-group-text">$</span>
-                <input type="number" class="form-control" name="precio" id="precio" step="0.01" placeholder="Ej: 500.00" required>
-            </div>
-        </div>
-        
-        <div class="col-md-6">
-            <label for="precio_sugerido" class="form-label">Precio Sugerido</label>
-            <div class="input-group">
-                <span class="input-group-text">$</span>
-                <input type="number" class="form-control" name="precio_sugerido" id="precio_sugerido" step="0.01" placeholder="Ej: 650.00">
-            </div>
-        </div>
-        
-        <div class="col-md-6">
-            <label for="cantidad_total" class="form-label">Cantidad Inicial en Stock</label>
-            <input type="number" class="form-control" name="cantidad_total" id="cantidad_total" value="1" min="1" required>
-        </div>
+<h2 class="mb-4 text-center">Añadir Nuevo Producto al Inventario</h2>
+<form method="post" class="row g-3">
+    <div class="col-md-12">
+        <label for="nombre" class="form-label">Nombre del Producto</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej: Paquete de Zapatos" required>
+    </div>
 
-        <div class="col-md-6">
-            <label for="estatus" class="form-label">Estatus</label>
-            <select name="estatus" id="estatus" class="form-select">
-                <option value="stock">En Stock</option>
-                <option value="agotado">Agotado</option>
-            </select>
+    <div class="col-md-6">
+        <label for="precio" class="form-label">Precio por Artículo</label>
+        <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" name="precio" id="precio" step="0.01" placeholder="Ej: 500.00"
+                required>
         </div>
+    </div>
 
-        <div class="col-12">
-            <label for="nota" class="form-label">Nota (Opcional)</label>
-            <textarea name="nota" class="form-control" id="nota" rows="3" placeholder="Añade una nota..."></textarea>
+    <div class="col-md-6">
+        <label for="precio_sugerido" class="form-label">Precio Sugerido</label>
+        <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" name="precio_sugerido" id="precio_sugerido" step="0.01"
+                placeholder="Ej: 650.00">
         </div>
-        
-        <div class="col-12 d-grid mt-4">
-            <button type="submit" class="btn btn-primary btn-lg">
-                <i class="bi bi-check-circle-fill"></i> Guardar Producto
-            </button>
-        </div>
-    </form>
+    </div>
+
+    <div class="col-md-6">
+        <label for="cantidad_total" class="form-label">Cantidad Inicial en Stock</label>
+        <input type="number" class="form-control" name="cantidad_total" id="cantidad_total" value="1" min="1" required>
+    </div>
+
+    <div class="col-md-6">
+        <label for="estatus" class="form-label">Estatus</label>
+        <select name="estatus" id="estatus" class="form-select">
+            <option value="stock">En Stock</option>
+            <option value="agotado">Agotado</option>
+        </select>
+    </div>
+
+    <div class="col-12">
+        <label for="nota" class="form-label">Nota (Opcional)</label>
+        <textarea name="nota" class="form-control" id="nota" rows="3" placeholder="Añade una nota..."></textarea>
+    </div>
+
+    <div class="col-12 d-grid mt-4">
+        <button type="submit" class="btn btn-primary btn-lg">
+            <i class="bi bi-check-circle-fill"></i> Guardar Producto
+        </button>
+    </div>
+</form>
 {% endblock %}

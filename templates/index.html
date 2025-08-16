@@ -1,58 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2 class="mb-4 text-center">Inventario Actual</h2>
-    <div class="table-responsive">
-        <table class="table table-hover align-middle">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th class="text-center">Stock Total</th>
-                    <th class="text-center">Estatus</th>
-                    <th class="text-center">Pagados</th> <th>Nota</th>
-                    <th class="text-center">Añadir Stock</th> </tr>
-                </tr>
-            </thead>
-            <tbody>
-                {% for producto in paginacion.items %}
-                    {% include '_producto_fila.html' %}
-                {% else %}
-                <tr>
-                    <td colspan="7">
-                        <div class="alert alert-secondary text-center">
-                            Aún no hay productos registrados. ¡Agrega el primero!
-                        </div>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
-    <nav aria-label="Navegación de productos">
-        <ul class="pagination justify-content-center mt-4">
-            <li class="page-item {% if not paginacion.has_prev %}disabled{% endif %}">
-                <a class="page-link" href="{{ url_for('index', page=paginacion.prev_num) }}">
-                    &laquo; Anterior
-                </a>
-            </li>
-
-            {% for num in paginacion.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
-                {% if num %}
-                    <li class="page-item {% if num == paginacion.page %}active{% endif %}">
-                        <a class="page-link" href="{{ url_for('index', page=num) }}">{{ num }}</a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled"><span class="page-link">…</span></li>
-                {% endif %}
+<h2 class="mb-4 text-center">Inventario Actual</h2>
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th class="text-center">Stock Total</th>
+                <th class="text-center">Estatus</th>
+                <th class="text-center">Pagados</th>
+                <th>Nota</th>
+                <th class="text-center">Añadir Stock</th>
+            </tr>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in paginacion.items %}
+            {% include '_producto_fila.html' %}
+            {% else %}
+            <tr>
+                <td colspan="7">
+                    <div class="alert alert-secondary text-center">
+                        Aún no hay productos registrados. ¡Agrega el primero!
+                    </div>
+                </td>
+            </tr>
             {% endfor %}
-            
-            <li class="page-item {% if not paginacion.has_next %}disabled{% endif %}">
-                <a class="page-link" href="{{ url_for('index', page=paginacion.next_num) }}">
-                    Siguiente &raquo;
-                </a>
-            </li>
-        </ul>
-    </nav>
+        </tbody>
+    </table>
+</div>
+
+<nav aria-label="Navegación de productos">
+    <ul class="pagination justify-content-center mt-4">
+        <li class="page-item {% if not paginacion.has_prev %}disabled{% endif %}">
+            <a class="page-link" href="{{ url_for('index', page=paginacion.prev_num) }}">
+                &laquo; Anterior
+            </a>
+        </li>
+
+        {% for num in paginacion.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+        {% if num %}
+        <li class="page-item {% if num == paginacion.page %}active{% endif %}">
+            <a class="page-link" href="{{ url_for('index', page=num) }}">{{ num }}</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled"><span class="page-link">…</span></li>
+        {% endif %}
+        {% endfor %}
+
+        <li class="page-item {% if not paginacion.has_next %}disabled{% endif %}">
+            <a class="page-link" href="{{ url_for('index', page=paginacion.next_num) }}">
+                Siguiente &raquo;
+            </a>
+        </li>
+    </ul>
+</nav>
 {% endblock %}

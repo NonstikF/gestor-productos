@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Reporte de Inventario</title>
     <style>
-        body { font-family: sans-serif; }
-        h1 { color: #333; text-align: center; }
-        .summary { border: 1px solid #ccc; padding: 20px; margin-top: 30px; }
-        .summary p { font-size: 1.2em; }
-        .total { font-weight: bold; color: #0056b3; }
+        body {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .summary {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .summary p {
+            font-size: 1.2em;
+        }
+
+        .total {
+            font-weight: bold;
+            color: #0056b3;
+        }
     </style>
 </head>
+
 <body>
     <h1>Reporte de Inventario</h1>
     <div class="summary">
@@ -19,4 +39,5 @@
         <p>Valor Total en Stock: <span class="total">${{ "%.2f"|format(total_stock) }}</span></p>
     </div>
 </body>
+
 </html>

@@ -4,12 +4,16 @@
 /* 2. Variables de color con la nueva paleta "Verde Neón" */
 :root {
     /* ----- NUEVOS COLORES ----- */
-    --primary-color: #39ff14; /* Verde fosforescente */
-    --background-gradient: linear-gradient(to right top, #050505, #0d0d0d, #121212, #181818, #1c1c1c); /* Gradiente casi negro */
-    --glass-background: rgba(15, 15, 15, 0.25); /* Cristal muy oscuro */
+    --primary-color: #39ff14;
+    /* Verde fosforescente */
+    --background-gradient: linear-gradient(to right top, #050505, #0d0d0d, #121212, #181818, #1c1c1c);
+    /* Gradiente casi negro */
+    --glass-background: rgba(15, 15, 15, 0.25);
+    /* Cristal muy oscuro */
     /* ----- FIN DE NUEVOS COLORES ----- */
-    
-    --glass-border: 1px solid rgba(57, 255, 20, 0.2); /* Borde con un toque de verde */
+
+    --glass-border: 1px solid rgba(57, 255, 20, 0.2);
+    /* Borde con un toque de verde */
     --font-family: 'Poppins', sans-serif;
     --text-primary: #ffffff;
     --text-secondary: #a0a0a0;
@@ -36,7 +40,8 @@ body {
 /* 5. Título principal con brillo verde neón */
 header h1 {
     color: var(--text-primary);
-    text-shadow: 0 0 20px rgba(57, 255, 20, 0.8); /* Sombra de texto verde */
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.8);
+    /* Sombra de texto verde */
 }
 
 /* 6. Navegación con acentos y estado activo en verde */
@@ -45,13 +50,17 @@ header h1 {
     font-weight: 400;
     transition: all 0.3s ease;
 }
+
 .nav-link:hover {
     color: var(--primary-color);
     text-shadow: 0 0 5px var(--primary-color);
 }
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     background-color: var(--primary-color);
-    color: #000000; /* Texto negro para máximo contraste sobre el verde */
+    color: #000000;
+    /* Texto negro para máximo contraste sobre el verde */
     font-weight: 600;
     box-shadow: 0 0 15px var(--primary-color);
 }
@@ -60,23 +69,28 @@ header h1 {
 .table {
     border-color: rgba(57, 255, 20, 0.2);
 }
+
 .table thead {
     color: var(--text-primary);
 }
-.table > :not(caption) > * > * {
+
+.table> :not(caption)>*>* {
     background-color: transparent;
     border-bottom-width: 1px;
 }
+
 .table thead th {
     border-bottom: 2px solid var(--primary-color);
 }
 
 /* 8. Transiciones de tabla con hover verde */
-.table-hover > tbody > tr {
+.table-hover>tbody>tr {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.table-hover > tbody > tr:hover {
-    background-color: rgba(57, 255, 20, 0.1); /* Hover sutil en verde */
+
+.table-hover>tbody>tr:hover {
+    background-color: rgba(57, 255, 20, 0.1);
+    /* Hover sutil en verde */
     transform: translateY(-2px);
     color: var(--text-primary);
 }
@@ -85,6 +99,7 @@ header h1 {
 tr.htmx-settling {
     opacity: 0;
 }
+
 tr {
     transition: all 0.5s ease-out;
 }
